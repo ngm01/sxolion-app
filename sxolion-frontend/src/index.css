@@ -1,0 +1,8 @@
+header.navbar {
+  display: flex;
+}
+
+header.navbar > a {
+  flex-direction: row;
+  padding: .5em;
+}
