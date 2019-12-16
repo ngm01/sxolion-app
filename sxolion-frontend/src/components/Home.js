@@ -23,6 +23,7 @@ class Home extends React.Component {
         return (
             <div>
       <Navbar />
+      
       <div>A List of Collections</div>
       <div>A link to create a new collection</div>
       <div>Clicking on a collection gives you a view of that collection</div>
