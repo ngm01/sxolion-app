@@ -1,5 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
+import CollectionPreview from './CollectionPreview';
+import {Link} from 'react-router-dom';
 
 class Home extends React.Component {
 
@@ -14,20 +16,34 @@ class Home extends React.Component {
         fetch(`http://localhost:5000/api/collections/`).then((response)=>{
             return response.json();
         }).then(data => {
-            this.state.collections = data;
-            console.log(this.state.collections);
+            this.setState({collections: data});
+            console.log(this.state.collections)
         })
     }
 
+    strikethrough(evt){
+        evt.target.style.textDecoration = "line-through";
+    }
+
     render(){
+        
         return (
+        <div>
             <div>
-      <Navbar />
-      
-      <div>A List of Collections</div>
-      <div>A link to create a new collection</div>
-      <div>Clicking on a collection gives you a view of that collection</div>
+            {this.state.collections.map((c) => 
+            <Link key={c._id} to={`collection/${c._id}`} >
+                <CollectionPreview title={c.title} description={c.description} />
+            </Link>
+            )}
             </div>
+            <h1>TODO:</h1>
+            <ol>
+                <li onClick={(e)=>{this.strikethrough(e)}}>Implement Router</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>Collection Previews should be wrapped in links to the Collection view proper</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>Create a "Create New Collection" Form Component</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>Link to that "Create New Collection" goes in NavBar</li>
+            </ol>
+        </div>
         )
     }
 

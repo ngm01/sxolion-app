@@ -5,4 +5,20 @@ header.navbar {
 header.navbar > a {
   flex-direction: row;
   padding: .5em;
+  
+}
+
+header.navbar > h2 {
+  flex-direction: row;
+  margin: 0
+}
+
+header.navbar > h2 > a {
+  color: rgb(66, 161, 245);
+  text-decoration: none;
+}
+
+.qrCode {
+  height: 10vh;
+  width: 10vw;
 }

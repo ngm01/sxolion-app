@@ -3,15 +3,14 @@
 import React from "react";
 class CollectionPreview extends React.Component {
 
-    // constructor(props){
-    //     super(props);
-
-    // }
+    constructor(props){
+        super(props);
+    }
 
     render(){
         return (
             <div style={{
-                border: '1px dashed red',
+                border: '1px solid aquamarine',
                 width: '25%',
                 padding:'5px',
                 margin: '5px'}}>        
