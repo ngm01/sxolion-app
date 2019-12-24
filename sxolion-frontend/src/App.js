@@ -16,8 +16,10 @@ class App extends React.Component {
     return (
       <div>
         <Route exact path="/" component={Home} />
-        <Route exact path="/createCollection" component={CreateCollection} userId={this.state.userId} />
-        <Route path="/collection/:id" component={Collection} userId={this.state.userId} />
+        <Route exact path="/createCollection" 
+          render={(props)=> <CreateCollection {...props} userId={this.state.userId} />} />
+        <Route path="/collection/:id" 
+          render={(props)=> <Collection {...props} userId={this.state.userId} />} />
       </div>
     );
   }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from './Navbar';
 import CollectionPreview from './CollectionPreview';
 import {Link} from 'react-router-dom';
 
@@ -41,8 +40,9 @@ class Home extends React.Component {
                 <li onClick={(e)=>{this.strikethrough(e)}}>Implement Router</li>
                 <li onClick={(e)=>{this.strikethrough(e)}}>Collection Previews should be wrapped in links to the Collection view proper</li>
                 <li onClick={(e)=>{this.strikethrough(e)}}>Create a "Create New Collection" Form Component</li>
-                <li onClick={(e)=>{this.strikethrough(e)}}>Link to that "Create New Collection" goes in NavBar</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>POST to collection from form</li>
                 <li onClick={(e)=>{this.strikethrough(e)}}>Update QR code on backend to produce object with attributes</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>How to handle "items" in create form? Backend work...</li>
             </ol>
         </div>
         )

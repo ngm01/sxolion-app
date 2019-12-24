@@ -1,9 +1,6 @@
 import React from 'react';
 
 class Navbar extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     logoutMsg(){
         alert('Login/Auth system coming soon')
