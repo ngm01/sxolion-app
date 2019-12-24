@@ -15,6 +15,7 @@ class Navbar extends React.Component {
                 <h2>
                 <a href="/">Sχolion</a></h2>
                 <a href="#" onClick={this.logoutMsg}>Logout</a>
+                <a href="/createCollection">New Collection</a>
             </header>
         )
     }

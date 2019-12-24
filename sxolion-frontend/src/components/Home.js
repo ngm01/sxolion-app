@@ -42,6 +42,7 @@ class Home extends React.Component {
                 <li onClick={(e)=>{this.strikethrough(e)}}>Collection Previews should be wrapped in links to the Collection view proper</li>
                 <li onClick={(e)=>{this.strikethrough(e)}}>Create a "Create New Collection" Form Component</li>
                 <li onClick={(e)=>{this.strikethrough(e)}}>Link to that "Create New Collection" goes in NavBar</li>
+                <li onClick={(e)=>{this.strikethrough(e)}}>Update QR code on backend to produce object with attributes</li>
             </ol>
         </div>
         )
