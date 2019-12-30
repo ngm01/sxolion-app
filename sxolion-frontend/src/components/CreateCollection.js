@@ -4,6 +4,7 @@ class CreateCollection extends React.Component {
     constructor(props){
         super(props)
         this.state = {
+            newItem: "",
             collection: {
                 userId: this.props.userId,
                 title: "",
@@ -15,12 +16,18 @@ class CreateCollection extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.addItem = this.addItem.bind(this);
     }
 
     handleChange(e){
-        let collection = this.state.collection;
-        collection[e.target.name] = e.target.value;
-        this.setState({collection});
+        //console.log(e.target.name, ":", e.target.value)
+        if(e.target.name === 'item'){
+            this.setState({newItem: e.target.value})
+        } else {
+            let collection = this.state.collection;
+            collection[e.target.name] = e.target.value;
+            this.setState({collection});
+        }
     }
 
     handleSubmit(e){
@@ -39,11 +46,36 @@ class CreateCollection extends React.Component {
         })
     }
 
+    addItem(e){
+        e.preventDefault();
+        let collection = this.state.collection;
+        collection.items.push(this.state.newItem);
+        this.setState({collection})
+    }
+
     render(){
         // TODO: React form
         return (
             <div>
                 <h2>Create a new collection.</h2>
+                <div id="itemsList">
+                    <ul>
+                        {
+                            this.state.collection.items.map((item, i) => {
+                                return <li key={i}>{item}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+                <form onSubmit={this.addItem}>
+                    <label>
+                        Add Items:
+                        <input type="text" name="item" 
+                        value={this.state.newItem} 
+                        onChange={this.handleChange} />
+                        <input type="submit" value="Add Item" />
+                    </label>
+                </form>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Title:
